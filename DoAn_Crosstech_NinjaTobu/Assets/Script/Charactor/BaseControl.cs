@@ -7,21 +7,24 @@ public class BaseControl : MonoBehaviour
     public Rigidbody2D Rb; // Đưa vào khi người chơi start
     public GameObject Arrow_;  // Đưa vào khi người chơi start
     public float DistanceScale;
-    public float MaxScale_Y = 10f;
-    public float Speed_Scale= 20f;
+    public float Doublejump = 2;
+    public float MaxScale_Y = 20f;
     public float Fore_Def = 100f;
     public float Gravity_Def = 1f;
+    public Vector2 Lastposition;
+    public Vector2 Currentposition;
     private float Fore = 0f;
-    public bool EnterWall = false;
     private Vector3 FingerBegan = Vector3.zero;
     private Vector3 FingerCurrent = Vector3.zero;
     private Vector3 DistanceMove =Vector3.zero;
 
     public virtual void PlayerJump_Control(Vector3 VectorRotation)
     {
-        EnterWall = false;
-       Rb.velocity = new Vector2(VectorRotation.x, VectorRotation.y)* Fore;
-       // Rb.AddForce(new Vector3(VectorRotation.x, VectorRotation.y,0f)*Fore * Fore_Def);
+        Rb.gravityScale = Gravity_Def;
+        Rb.velocity = Vector3.zero;
+        //Rb.velocity = new Vector2(VectorRotation.x, VectorRotation.y)* Fore;
+        Rb.AddForce(new Vector3(VectorRotation.x, VectorRotation.y, 0f) * Fore * Fore_Def) ;
+        Doublejump--;
     }
     public virtual void GetTouch()
     {
@@ -40,12 +43,13 @@ public class BaseControl : MonoBehaviour
                     FingerCurrent = Camera.main.ScreenToWorldPoint(Finger.position);
                     DistanceMove = FingerCurrent - FingerBegan;
                     RotationArrow();
-                    ScaleArrow();
+                    if(Doublejump>0)
+                        ScaleArrow();
 
                 }
                 if(Finger.phase == TouchPhase.Ended)
                 {
-                    if(Fore>0.5f)
+                    if(Fore>0.5f && Doublejump>0)
                     PlayerJump_Control(DistanceMove);
                     CancelArrow();
                 }
@@ -57,15 +61,11 @@ public class BaseControl : MonoBehaviour
         float Power = Mathf.Sqrt(Mathf.Pow(DistanceMove.x, 2) + Mathf.Pow(DistanceMove.y, 2));
         float Addfore_Power = Power - DistanceScale;
         DistanceScale = Power;
-        if (Arrow_.transform.localScale.y > MaxScale_Y)
-        {
-            Arrow_.transform.localScale = new Vector3(Arrow_.transform.localScale.x,MaxScale_Y, Arrow_.transform.localScale.z);
-        }
-        else
-        {
-            Arrow_.transform.localScale += new Vector3(0f, Addfore_Power, 0f) * Speed_Scale * Time.deltaTime;
-        }
-        Fore = Fore >= 10f ?10f:Arrow_.transform.localScale.y;
+        Fore = Power;
+        if (Fore < MaxScale_Y)
+            Fore += Power* Time.deltaTime;
+        else Fore = MaxScale_Y;
+        Arrow_.transform.localScale = new Vector3(1f, Fore + 2f, 1f);
     }
     private void RotationArrow()
     {
@@ -77,20 +77,29 @@ public class BaseControl : MonoBehaviour
         Arrow_.transform.localScale = new Vector3(Arrow_.transform.localScale.x,0f, Arrow_.transform.localScale.z);
         Arrow_.transform.rotation = Quaternion.Euler(0, 0, 0);
     }
-    public virtual void ClimbWall()
+    public virtual void ClaimWall()
     {
-        if (EnterWall)
-        {
-            Rb.gravityScale = 0f;
-            Rb.velocity = Vector2.zero;
-        }
-        else
-        {
-            Rb.gravityScale = Gravity_Def;
-        }
+        Rb.gravityScale = 0;
+        Rb.velocity = Vector2.zero;
+        Doublejump = 2;
     }
     public virtual void Fight_Enermy()
     {
 
+    }
+    public virtual void Player_Die()
+    {
+        Destroy(this.gameObject);
+    }
+    public virtual void Distance_Player()
+    {
+        Currentposition = this.transform.position;
+        int _Distance = Mathf.RoundToInt((Currentposition.y - Lastposition.y)*10f);
+        if (_Distance >0)
+        {
+            GamePlayManager.Instance.Score_player += _Distance;
+            GameUIManager.Instance.Update_score();
+            Lastposition = Currentposition;
+        }
     }
 }

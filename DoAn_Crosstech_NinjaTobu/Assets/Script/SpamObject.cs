@@ -13,7 +13,7 @@ public class SpamObject : MonoBehaviour
     {
         DistanceBegin = Mathf.Abs(transform.position.y - Cam.transform.position.y);
         PosBegin = transform.position.y;
-        Instantiate(Object, transform.position, Quaternion.identity);
+        Instantiate(Object, new Vector3(-4.19f, transform.position.y, transform.position.z), Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -22,7 +22,7 @@ public class SpamObject : MonoBehaviour
         float DistanceCurrent = Mathf.Abs(transform.position.y - PosBegin);
         if (DistanceCurrent >= DistanceBegin)
         {
-            Instantiate(Object, transform.position, Quaternion.identity);
+            Instantiate(Object, new Vector3(-4.19f,transform.position.y,transform.position.z), Quaternion.identity);
             PosBegin = transform.position.y;
         }
         

@@ -11,10 +11,12 @@ public class GamePlayManager :MonoSingleton<GamePlayManager>
     {
         Score_player = 0;
         Instantiate(Id_Skin, new Vector3(0, 0, 0), Quaternion.identity);
+    //    Instantiate(Id_Skin, new Vector3(0, 0, 0), Quaternion.identity);
     }
     public void PlayerDeath()
     {
-        EnermyManager.Instance.PauseGane();
+      //  EnermyManager.Instance.PauseGane();
     }
+
 
 }
