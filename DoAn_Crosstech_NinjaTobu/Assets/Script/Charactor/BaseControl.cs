@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class BaseControl : MonoBehaviour
 {
+    public Animator _animator;
+    public const string ANIMATOR_IDLE = "Charactor_Idle";
+    public const string ANIMATOR_JUMP = "Charactor_Jump";
     public Rigidbody2D Rb; // Đưa vào khi người chơi start
     public GameObject Arrow_;  // Đưa vào khi người chơi start
     public float DistanceScale;
@@ -17,14 +21,22 @@ public class BaseControl : MonoBehaviour
     private Vector3 FingerBegan = Vector3.zero;
     private Vector3 FingerCurrent = Vector3.zero;
     private Vector3 DistanceMove =Vector3.zero;
-
     public virtual void PlayerJump_Control(Vector3 VectorRotation)
     {
         Rb.gravityScale = Gravity_Def;
         Rb.velocity = Vector3.zero;
         //Rb.velocity = new Vector2(VectorRotation.x, VectorRotation.y)* Fore;
         Rb.AddForce(new Vector3(VectorRotation.x, VectorRotation.y, 0f) * Fore * Fore_Def) ;
+        if (Arrow_.transform.rotation.z > 0 && this.transform.localScale.x>0)
+        {
+            Flip_x();
+        }
+        else if (Arrow_.transform.rotation.z < 0 && this.transform.localScale.x <0)
+        {
+            Flip_x();
+        }
         Doublejump--;
+        _animator.Play(ANIMATOR_JUMP);
     }
     public virtual void GetTouch()
     {
@@ -82,6 +94,7 @@ public class BaseControl : MonoBehaviour
         Rb.gravityScale = 0;
         Rb.velocity = Vector2.zero;
         Doublejump = 2;
+        _animator.Play(ANIMATOR_IDLE);
     }
     public virtual void Fight_Enermy()
     {
@@ -101,5 +114,10 @@ public class BaseControl : MonoBehaviour
             GameUIManager.Instance.Update_score();
             Lastposition = Currentposition;
         }
+    }
+    public virtual void Flip_x()
+    {
+        this.transform.localScale = new Vector3(-this.transform.localScale.x, this.transform.localScale.y, this.transform.localScale.z);
+
     }
 }

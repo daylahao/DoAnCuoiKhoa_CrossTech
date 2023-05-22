@@ -29,7 +29,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0.5642468, w: 0.82560617}
   m_LocalPosition: {x: 0.1588, y: -0.0258, z: 0}
   m_LocalScale: {x: 0.22, y: 0.33, z: 0.22999999}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6127602083180113005}
   m_RootOrder: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 1
+  m_SpriteSortPoint: 0
 --- !u!60 &6127602082990511024
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: 6127602083180113004}
   - component: {fileID: 6127602083180113006}
   - component: {fileID: -7126002052701415530}
+  - component: {fileID: 3397879060426127325}
   m_Layer: 0
   m_Name: Skeleton React_0
   m_TagString: Enermy
@@ -156,7 +157,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1, y: -2, z: 0}
   m_LocalScale: {x: 3.4399998, y: 3.4399998, z: 3.4399998}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6127602082990511027}
   m_Father: {fileID: 0}
@@ -227,6 +228,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
+  time_flipX: 1
+  time_: 0
   Fore_Attack: 200
 --- !u!61 &-7126002052701415530
 BoxCollider2D:
@@ -254,3 +257,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.13, y: 0.32}
   m_EdgeRadius: 0
+--- !u!95 &3397879060426127325
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6127602083180113001}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8386301bb940427419a653baeff5f7ab, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
