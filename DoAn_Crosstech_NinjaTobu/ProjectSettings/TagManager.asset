@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enermy
   - Wall
+  - Land
   layers:
   - Default
   - TransparentFX

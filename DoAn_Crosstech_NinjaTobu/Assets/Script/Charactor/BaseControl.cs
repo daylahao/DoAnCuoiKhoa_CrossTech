@@ -52,6 +52,9 @@ public class BaseControl : MonoBehaviour
                 }
                 if (Finger.phase == TouchPhase.Moved)
                 {
+                    Time.timeScale = 0.2f;
+                    if(Rb.gravityScale>0.1f)
+                    Rb.gravityScale -= 5f * Time.deltaTime;
                     FingerCurrent = Camera.main.ScreenToWorldPoint(Finger.position);
                     DistanceMove = FingerCurrent - FingerBegan;
                     RotationArrow();
@@ -61,7 +64,8 @@ public class BaseControl : MonoBehaviour
                 }
                 if(Finger.phase == TouchPhase.Ended)
                 {
-                    if(Fore>0.5f && Doublejump>0)
+                    Time.timeScale = 1f;
+                    if (Fore>0.5f && Doublejump>0)
                     PlayerJump_Control(DistanceMove);
                     CancelArrow();
                 }
