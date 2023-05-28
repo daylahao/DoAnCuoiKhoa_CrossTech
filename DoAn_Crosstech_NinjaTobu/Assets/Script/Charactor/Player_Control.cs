@@ -32,4 +32,11 @@ public class Player_Control : BaseControl
         if (collision.gameObject.tag == "Finish")
             Player_Die();
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Finish")
+            Player_Die();
+        if (collision.gameObject.tag == "Complete")
+            Debug.Log("Hoan Thanh");
+    }
 }

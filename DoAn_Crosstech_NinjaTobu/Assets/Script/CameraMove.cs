@@ -5,21 +5,27 @@ using UnityEngine;
 public class CameraMove : MonoBehaviour
 {
     public Transform CharactorTransform;
+    public Transform LimitTransform;
     public float SpeedCamUp;
     public float Offset;
     // Start is called before the first frame update
     void Start()
     {
         CharactorTransform = GameObject.Find("Player").transform;
+        LimitTransform = GameObject.Find("Land Limit").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        AutoMoveUp_Camera();
-        if (CharactorTransform.position.y > transform.position.y)
+        if (LimitTransform.position.y > transform.position.y * 1.5)
         {
-            transform.position = new Vector3(transform.position.x, CharactorTransform.position.y + Offset, transform.position.z);
+            AutoMoveUp_Camera();
+            if(CharactorTransform)
+            if (CharactorTransform.position.y > transform.position.y)
+            {
+                transform.position = new Vector3(transform.position.x, CharactorTransform.position.y + Offset, transform.position.z);
+            }
         }
     }
     private void AutoMoveUp_Camera()

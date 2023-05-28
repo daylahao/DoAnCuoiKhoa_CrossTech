@@ -73,6 +73,7 @@
     <Compile Include="Assets\Script\Manager\GameDataManager.cs" />
     <Compile Include="Assets\Script\Manager\MonoSingleton.cs" />
     <Compile Include="Assets\Script\Manager\EnermyManager.cs" />
+    <Compile Include="Assets\ObjectMove.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
