@@ -25,10 +25,10 @@ public class Player_Control : BaseControl
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Land" && collision.transform.position.y > transform.position.y)
-            Debug.Log("Under Wall");
-        if (collision.gameObject.tag =="Wall" || collision.gameObject.tag=="Land")
+        if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Land")
+        {
             ClaimWall();
+        }
         if (collision.gameObject.tag == "Finish")
             Player_Die();
     }

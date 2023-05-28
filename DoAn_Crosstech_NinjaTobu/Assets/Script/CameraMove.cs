@@ -18,13 +18,14 @@ public class CameraMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (LimitTransform.position.y > transform.position.y * 1.5)
+        float height_Camera = Camera.main.orthographicSize;
+        if (Mathf.Abs(transform.position.y + height_Camera) < LimitTransform.position.y +Offset)
         {
             AutoMoveUp_Camera();
             if(CharactorTransform)
             if (CharactorTransform.position.y > transform.position.y)
             {
-                transform.position = new Vector3(transform.position.x, CharactorTransform.position.y + Offset, transform.position.z);
+                transform.position = new Vector3(transform.position.x, CharactorTransform.position.y, transform.position.z);
             }
         }
     }
