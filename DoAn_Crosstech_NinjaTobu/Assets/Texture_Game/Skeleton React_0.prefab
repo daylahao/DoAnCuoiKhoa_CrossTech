@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Fore_Attack: 0
+  _EnermyBody: {fileID: 6127602083180113006}
 --- !u!1 &6127602083180113001
 GameObject:
   m_ObjectHideFlags: 0

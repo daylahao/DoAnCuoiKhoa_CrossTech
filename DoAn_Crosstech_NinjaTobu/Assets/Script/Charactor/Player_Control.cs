@@ -16,7 +16,7 @@ public class Player_Control : BaseControl
     // Update is called once per frame
     void Update()
     {
-        Distance_Player();
+       // Distance_Player();
         GetTouch();
     }
     public override void GetTouch()

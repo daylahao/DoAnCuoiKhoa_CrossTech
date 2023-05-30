@@ -6,7 +6,7 @@ public class GameManager : MonoSingleton<GameManager>
 {
     public Transform _popUpContainer;
 
-    public void OnShowDialog<T>(string path, object data = null, UnityEngine.Events.UnityAction callbackCompleteShow = null) where T : BaseDialog
+    public void OnShowDialog<T>(string path, object data = null, UnityEngine.Events.UnityAction callbackCompleteShow = null) where T:BaseDialog
     {
         GameObject prefab = this.GetResourceFile<GameObject>(path);
         if (prefab != null)
@@ -18,6 +18,7 @@ public class GameManager : MonoSingleton<GameManager>
             }
         }
     }
+
     /// <summary>
     /// Load một file từ folder Resource
     /// </summary>
@@ -36,7 +37,7 @@ public class GameManager : MonoSingleton<GameManager>
     public List<HighScoreData> GenerateFakeHighScore()
     {
         List<HighScoreData> _scores = new List<HighScoreData>();
-        int amountGen = 100;
+        int amountGen = 10;
         for (int i = 0; i < amountGen; i++)
         {
             _scores.Add(new HighScoreData()

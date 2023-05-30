@@ -7,6 +7,7 @@ public class CameraMove : MonoBehaviour
     public Transform CharactorTransform;
     public Transform LimitTransform;
     public float SpeedCamUp;
+    public bool IsLevel;
     public float Offset;
     // Start is called before the first frame update
     void Start()
@@ -18,14 +19,17 @@ public class CameraMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float height_Camera = Camera.main.orthographicSize;
-        if (Mathf.Abs(transform.position.y + height_Camera) < LimitTransform.position.y +Offset)
+        if (IsLevel)
         {
-            AutoMoveUp_Camera();
-            if(CharactorTransform)
-            if (CharactorTransform.position.y > transform.position.y)
+            float height_Camera = Camera.main.orthographicSize;
+            if (Mathf.Abs(transform.position.y + height_Camera) < LimitTransform.position.y + Offset)
             {
-                transform.position = new Vector3(transform.position.x, CharactorTransform.position.y, transform.position.z);
+                AutoMoveUp_Camera();
+                if (CharactorTransform)
+                    if (CharactorTransform.position.y > transform.position.y)
+                    {
+                        transform.position = new Vector3(transform.position.x, CharactorTransform.position.y, transform.position.z);
+                    }
             }
         }
     }

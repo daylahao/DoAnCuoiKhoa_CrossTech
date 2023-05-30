@@ -24,11 +24,11 @@ public class Creep_Enermy : BaseEnermy
     void Update()
     {
         Flip_X();
-            if (Zone_Attack.GetComponent<PolygonCollider2D>().IsTouching(Player.GetComponent<BoxCollider2D>()))
-            {
-                Attack_Count--;
-                _animator.Play(ANIMATOR_Attack);
-            }
+    }
+    public void Attack_ZoneActive()
+    {
+        Attack_Count--;
+        _animator.Play(ANIMATOR_Attack);
         if (Attack_Count < 1)
         {
             Destroy(Zone_Attack);
