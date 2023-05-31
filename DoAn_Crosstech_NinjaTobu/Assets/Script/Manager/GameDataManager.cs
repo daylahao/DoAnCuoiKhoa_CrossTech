@@ -10,7 +10,8 @@ public class GameDataManager : MonoSingleton<GameDataManager>
     // Start is called before the first frame update
     void Start()
     {
-        loaddata();
+        //loaddata();
+        GameUIManager.Instance.OnInit();
     }
 
     // Update is called once per frame
@@ -53,12 +54,11 @@ public class GameDataManager : MonoSingleton<GameDataManager>
     }
     public void CreateUser()
     {
-        data.user_name = "H";
+          
 
     }
     public void StartGame()
     {
-        GamePlayManager.Instance.StartGame(data);
-        EnermyManager.Instance.StartGame();
+
     }
 }

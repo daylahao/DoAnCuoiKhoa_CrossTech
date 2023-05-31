@@ -51,6 +51,7 @@ public class BaseDialog : MonoBehaviour
     {
         
         _animator.Play(ANIMATOR_HIDE);
+        OnCompleteHide();
     }
     protected virtual void OnCompleteHide()
     {

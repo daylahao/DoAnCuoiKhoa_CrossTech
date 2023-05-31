@@ -591,7 +591,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3595108640153850577}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1505120030}
+        m_TargetAssemblyTypeName: LevelHandler, Assembly-CSharp
+        m_MethodName: ShowDialog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1505120029}
+        m_TargetAssemblyTypeName: DialogConainter, Assembly-CSharp
+        m_MethodName: ClickCloseDialog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3595108640535804899
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,6 +959,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3595108640834789912}
+  - component: {fileID: 1505120028}
+  - component: {fileID: 1505120029}
+  - component: {fileID: 1505120030}
   m_Layer: 5
   m_Name: DialogBtn_Home_Container
   m_TagString: Untagged
@@ -965,6 +992,56 @@ RectTransform:
   m_AnchoredPosition: {x: -1.5, y: -37.200005}
   m_SizeDelta: {x: 114.00484, y: 147.96048}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1505120028
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3595108640834789915}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1505120029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3595108640834789915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f30e920216c027441bb16bbad7f0d75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 1505120028}
+  _PreFabDialog: {fileID: 0}
+--- !u!114 &1505120030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3595108640834789915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7cac36168ac634f8f62d84aa4f6751, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Dialog: {fileID: 0}
+  _Configs: {fileID: 0}
+  _Datas: {fileID: 0}
 --- !u!1 &3595108641358487827
 GameObject:
   m_ObjectHideFlags: 0

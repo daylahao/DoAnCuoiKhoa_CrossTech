@@ -14,7 +14,7 @@ public class LevelConfigs : ScriptableObject
             if (_isntance == null)
             {
                 _isntance = GameManager.Instance.GetResourceFile<LevelConfigs>("Configs/LevelConfigs");
-             
+                
             }
             return _isntance;
         }

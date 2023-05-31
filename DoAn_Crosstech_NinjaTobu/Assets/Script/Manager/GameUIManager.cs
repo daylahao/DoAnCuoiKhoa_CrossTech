@@ -8,6 +8,7 @@ public class GameUIManager : MonoSingleton<GameUIManager>
 {
     public TextMeshProUGUI Text_Score;
     public TextMeshProUGUI Text_highscore;
+    public LevelHandler _LevelHandler;
     public void Update_Highscore_text()
     {
         //GameDataManager.Instance.data.high_score.Sort();
@@ -22,5 +23,14 @@ public class GameUIManager : MonoSingleton<GameUIManager>
     {
         GamePlayManager.Instance.Score_player = 0;
         Text_Score.text = GamePlayManager.Instance.Score_player.ToString();
+    }
+    public void OnInit()
+    {
+        _LevelHandler?.InitHandler();
+        LoadMenu();
+    }
+    public void LoadMenu()
+    {
+        GameManager.Instance.OnShowDialog<DialogConainter>("Dialog/DialogBtn_Home_Container");
     }
 }

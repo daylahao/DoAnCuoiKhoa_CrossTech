@@ -4,9 +4,18 @@ using UnityEngine;
 
 public class GameManager : MonoSingleton<GameManager>
 {
+    public LevelConfig _CurrentPlayinglevel;
+    public void Start()
+    {
+        DontDestroyOnLoad(this);
+    }
+    public void OnJonGame(LevelConfig config)
+    {
+        this._CurrentPlayinglevel = config;
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(3);
+    }
     public Transform _popUpContainer;
-
-    public void OnShowDialog<T>(string path, object data = null, UnityEngine.Events.UnityAction callbackCompleteShow = null) where T:BaseDialog
+    public T OnShowDialog<T>(string path, object data = null, UnityEngine.Events.UnityAction callbackCompleteShow = null) where T:BaseDialog
     {
         GameObject prefab = this.GetResourceFile<GameObject>(path);
         if (prefab != null)
@@ -16,7 +25,9 @@ public class GameManager : MonoSingleton<GameManager>
             {
                 objectSpawned.OnShow(data, callbackCompleteShow);
             }
+            return objectSpawned as T;
         }
+        return null;
     }
 
     /// <summary>

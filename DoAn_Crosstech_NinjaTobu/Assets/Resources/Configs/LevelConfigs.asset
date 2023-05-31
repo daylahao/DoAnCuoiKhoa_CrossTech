@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: LevelConfigs
   m_EditorClassIdentifier: Assembly-CSharp::LevelConfigs
+  _Level: []

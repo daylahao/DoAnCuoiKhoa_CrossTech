@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player_Control : BaseControl
 {
+    public bool IsPlayGame = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +17,9 @@ public class Player_Control : BaseControl
     // Update is called once per frame
     void Update()
     {
-       // Distance_Player();
-        GetTouch();
+        // Distance_Player();
+        if (IsPlayGame == true)
+            GetTouch();
     }
     public override void GetTouch()
     {
