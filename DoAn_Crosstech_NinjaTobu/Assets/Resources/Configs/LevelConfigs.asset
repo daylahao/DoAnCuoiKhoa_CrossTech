@@ -12,4 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: LevelConfigs
   m_EditorClassIdentifier: Assembly-CSharp::LevelConfigs
-  _Level: []
+  _Level:
+  - _LevelID: 1
+    _PrefabLevel: {fileID: 0}
+    _RewardWhenComplete: 0
+  - _LevelID: 2
+    _PrefabLevel: {fileID: 0}
+    _RewardWhenComplete: 0
+  - _LevelID: 3
+    _PrefabLevel: {fileID: 0}
+    _RewardWhenComplete: 0

@@ -12,7 +12,7 @@ public class LevelsDialog : BaseDialog
     public void CreateItems(LevelConfig config)
     {
         LevelItem newItem = Instantiate<LevelItem>(this._PrefabItem, this._TransformItem);
-        newItem.ParseData(config);
+        newItem.ParseData(config, OnChooseLevel);
         _Items ??= new List<LevelItem>();
         _Items.Add(newItem);
     }

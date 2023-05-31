@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoSingleton<GameManager>
 {
+    public int NumberScene_PlayGame = 1;
     public LevelConfig _CurrentPlayinglevel;
     public void Start()
     {
@@ -12,7 +13,7 @@ public class GameManager : MonoSingleton<GameManager>
     public void OnJonGame(LevelConfig config)
     {
         this._CurrentPlayinglevel = config;
-        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(3);
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(NumberScene_PlayGame);
     }
     public Transform _popUpContainer;
     public T OnShowDialog<T>(string path, object data = null, UnityEngine.Events.UnityAction callbackCompleteShow = null) where T:BaseDialog
