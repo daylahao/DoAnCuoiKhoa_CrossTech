@@ -7,20 +7,21 @@ public class CameraMove : MonoBehaviour
     public Transform CharactorTransform;
     public Transform LimitTransform;
     public float SpeedCamUp;
-    public bool IsLevel;
+    public bool IsPlayLevel = false;
     public float Offset;
     // Start is called before the first frame update
     void Start()
     {
-        CharactorTransform = GameObject.Find("Player").transform;
-        LimitTransform = GameObject.Find("Land Limit").transform;
+        if (IsPlayLevel)
+        {
+            CharactorTransform = GameObject.Find("Player").transform;
+            LimitTransform = GameObject.Find("Land_Limit").transform;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (IsLevel)
-        {
             float height_Camera = Camera.main.orthographicSize;
             if (Mathf.Abs(transform.position.y + height_Camera) < LimitTransform.position.y + Offset)
             {
@@ -31,7 +32,6 @@ public class CameraMove : MonoBehaviour
                         transform.position = new Vector3(transform.position.x, CharactorTransform.position.y, transform.position.z);
                     }
             }
-        }
     }
     private void AutoMoveUp_Camera()
     {

@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 8110326645937398195}
   - component: {fileID: -183650571215342169}
   m_Layer: 5
-  m_Name: Item_Level
+  m_Name: Item_Level_Lock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 24694bda036479e42b6ce26a9a2afa7d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7b9290dff29da74469860e9f6012f714, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -282,6 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f35fd4020f0b4b24e8a337696f12bae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _PrefabIscomple: {fileID: 1321146483281871410, guid: 76eacae32b361814b8336632b7f35f4b, type: 3}
   _tmplevel: {fileID: 8110326645117462614}
   _levelID: 0
   _Config:

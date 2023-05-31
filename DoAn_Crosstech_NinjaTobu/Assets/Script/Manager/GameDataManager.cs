@@ -10,7 +10,7 @@ public class GameDataManager : MonoSingleton<GameDataManager>
     // Start is called before the first frame update
     void Start()
     {
-        //loaddata();
+        loaddata();
         GameUIManager.Instance.OnInit();
     }
 
@@ -54,8 +54,7 @@ public class GameDataManager : MonoSingleton<GameDataManager>
     }
     public void CreateUser()
     {
-          
-
+        Userdata.Instance.NewUser();
     }
     public void StartGame()
     {

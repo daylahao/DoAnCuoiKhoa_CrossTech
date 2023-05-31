@@ -16,7 +16,7 @@ public class LevelHandler : MonoBehaviour
     public void ShowDialog()
     {
         _Dialog = GameManager.Instance.OnShowDialog<LevelsDialog>("Dialog/DialogLevelItem_Container");
-        _Dialog.ParseData(_Configs._Level,this); 
+        _Dialog.ParseData(_Configs._Level, _Datas._CurrentLevelCompleted, this);
     }
     public void OnChooseRoom(LevelConfig Config)
     {

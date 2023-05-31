@@ -59,6 +59,7 @@
     <Compile Include="Assets\ObjectMove.cs" />
     <Compile Include="Assets\Script\Manager\GameUIManager.cs" />
     <Compile Include="Assets\Zone_AddFoce.cs" />
+    <Compile Include="Assets\Script\Manager\UI\DialogConainter.cs" />
     <Compile Include="Assets\Script\Enermy\BaseEnermy.cs" />
     <Compile Include="Assets\Script\DestroyObject.cs" />
     <Compile Include="Assets\Script\Manager\GameManager.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Assets\Script\Manager\Data\UserDataLevel.cs" />
     <Compile Include="Assets\Script\Enermy\Creep_Enermy.cs" />
     <Compile Include="Assets\Script\Manager\UIManager.cs" />
+    <Compile Include="Assets\Script\Manager\UI\MapSpawner.cs" />
     <Compile Include="Assets\Script\Manager\UI\LevelsDialog.cs" />
     <Compile Include="Assets\Script\ScriptConfig\LevelConfig.cs" />
     <Compile Include="Assets\Script\Manager\GamePlayManager.cs" />
@@ -79,8 +81,6 @@
     <Compile Include="Assets\Script\Manager\GameDataManager.cs" />
     <Compile Include="Assets\Script\Manager\MonoSingleton.cs" />
     <Compile Include="Assets\Script\Manager\EnermyManager.cs" />
-    <Compile Include="Assets\Script\Manager\UI\MapSpawner.cs" />
-    <Compile Include="Assets\Script\Manager\UI\DialogConainter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

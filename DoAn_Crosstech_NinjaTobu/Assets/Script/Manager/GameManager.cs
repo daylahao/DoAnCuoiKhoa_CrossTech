@@ -13,7 +13,8 @@ public class GameManager : MonoSingleton<GameManager>
     public void OnJonGame(LevelConfig config)
     {
         this._CurrentPlayinglevel = config;
-        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(NumberScene_PlayGame);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(NumberScene_PlayGame);
+        GamePlayManager.Instance.StartGame(GameDataManager.Instance.data);
     }
     public Transform _popUpContainer;
     public T OnShowDialog<T>(string path, object data = null, UnityEngine.Events.UnityAction callbackCompleteShow = null) where T:BaseDialog

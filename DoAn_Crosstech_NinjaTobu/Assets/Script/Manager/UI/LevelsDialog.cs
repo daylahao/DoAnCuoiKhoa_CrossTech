@@ -9,19 +9,20 @@ public class LevelsDialog : BaseDialog
     public LevelItem _PrefabItem;
     public List<LevelItem> _Items;
     public LevelHandler _handler;
-    public void CreateItems(LevelConfig config)
+    public void CreateItems(LevelConfig config, bool IsComplete)
     {
-        LevelItem newItem = Instantiate<LevelItem>(this._PrefabItem, this._TransformItem);
-        newItem.ParseData(config, OnChooseLevel);
+        LevelItem newItem = Instantiate<LevelItem>(this._PrefabItem,this._TransformItem);
+        newItem.ParseData(config,IsComplete,OnChooseLevel);
         _Items ??= new List<LevelItem>();
         _Items.Add(newItem);
     }
-    public void ParseData(List<LevelConfig> levelConfigs,LevelHandler _Handler)
+    public void ParseData(List<LevelConfig> levelConfigs,int CompleteLevel,LevelHandler _Handler)
     {
+        Debug.Log(CompleteLevel.ToString());
         _handler = _Handler;
         for (int i = 0; i < levelConfigs.Count; i++)
         { 
-            CreateItems(levelConfigs[i]);
+            CreateItems(levelConfigs[i], levelConfigs[i]._LevelID<= CompleteLevel);
         }
     }
     public void OnChooseLevel(LevelConfig config)

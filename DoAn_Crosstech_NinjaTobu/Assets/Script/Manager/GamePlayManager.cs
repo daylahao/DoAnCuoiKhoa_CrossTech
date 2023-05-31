@@ -11,7 +11,7 @@ public class GamePlayManager :MonoSingleton<GamePlayManager>
     {
         Score_player = 0;
         Instantiate(Id_Skin, new Vector3(0, 0, 0), Quaternion.identity);
-    //    Instantiate(Id_Skin, new Vector3(0, 0, 0), Quaternion.identity);
+        Camera.main.GetComponent<CameraMove>().IsPlayLevel = true;
     }
     public void PlayerDeath()
     {

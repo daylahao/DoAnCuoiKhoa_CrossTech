@@ -12,6 +12,7 @@ public class Userdata
     public static Userdata Instance => GameDataManager.Instance.data;
     public void NewUser()
     {
+        id_Skin = 0;
         _LevelData = new UserDataLevel();
         _LevelData.NewUser();
     }

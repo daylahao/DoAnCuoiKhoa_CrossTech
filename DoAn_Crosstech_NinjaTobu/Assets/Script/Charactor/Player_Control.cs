@@ -8,6 +8,7 @@ public class Player_Control : BaseControl
     // Start is called before the first frame update
     void Start()
     {
+        IsPlayGame = true;
         Lastposition = Vector2.zero;
         Rb = GetComponent<Rigidbody2D>();
         Arrow_ = transform.GetChild(0).gameObject;
