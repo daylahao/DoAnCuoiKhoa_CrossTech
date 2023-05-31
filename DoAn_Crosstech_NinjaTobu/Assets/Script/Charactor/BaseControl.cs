@@ -106,6 +106,7 @@ public class BaseControl : MonoBehaviour
     }
     public virtual void Player_Die()
     {
+        GamePlayManager.Instance.PlayerDeath();
         Destroy(this.gameObject);
     }
     public virtual void Distance_Player()
