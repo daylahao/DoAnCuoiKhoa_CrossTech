@@ -257,19 +257,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8110326645937398194}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -183650571215342169}
-        m_TargetAssemblyTypeName: LevelItem, Assembly-CSharp
-        m_MethodName: OnClickChooseLevel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &-183650571215342169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,7 +270,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f35fd4020f0b4b24e8a337696f12bae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _PrefabIscomple: {fileID: 1321146483281871410, guid: 76eacae32b361814b8336632b7f35f4b, type: 3}
   _tmplevel: {fileID: 8110326645117462614}
   _levelID: 0
   _Config:

@@ -6,12 +6,16 @@ using UnityEngine.Events;
 public class LevelsDialog : BaseDialog
 {
     public Transform _TransformItem;
-    public LevelItem _PrefabItem;
+    private LevelItem _PrefabItem;
+    public LevelItem _PrefabItemComplete;
+    public LevelItem _PrefabItemLock;
     public List<LevelItem> _Items;
     public LevelHandler _handler;
     public void CreateItems(LevelConfig config, bool IsComplete)
     {
+        _PrefabItem = IsComplete ? _PrefabItemComplete : _PrefabItemLock;
         LevelItem newItem = Instantiate<LevelItem>(this._PrefabItem,this._TransformItem);
+        newItem.Dialog_Parent = this.GetComponent<DialogConainter>();
         newItem.ParseData(config,IsComplete,OnChooseLevel);
         _Items ??= new List<LevelItem>();
         _Items.Add(newItem);

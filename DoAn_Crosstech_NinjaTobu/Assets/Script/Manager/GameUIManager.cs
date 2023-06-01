@@ -27,7 +27,6 @@ public class GameUIManager : MonoSingleton<GameUIManager>
     public void OnInit()
     {
         _LevelHandler?.InitHandler();
-        LoadMenu();
     }
     public void LoadMenu()
     {

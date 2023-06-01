@@ -9,16 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 3169e7d3760f12b4cb58a39ad89c0acc, type: 3}
   m_Name: LevelConfigs
   m_EditorClassIdentifier: Assembly-CSharp::LevelConfigs
   _Level:
-  - _LevelID: 1
+  - _LevelID: 0
     _PrefabLevel: {fileID: 3915876808675209518, guid: 2b37661a600d1a146ac59c3a6e7a2154, type: 3}
-    _RewardWhenComplete: 0
-  - _LevelID: 2
-    _PrefabLevel: {fileID: 5477902083373546444, guid: d811940e6ad64c04782685bc56c799de, type: 3}
-    _RewardWhenComplete: 0
-  - _LevelID: 3
-    _PrefabLevel: {fileID: 4325747392766868110, guid: 9a687c2520864e542b59fc19c340144b, type: 3}
     _RewardWhenComplete: 0

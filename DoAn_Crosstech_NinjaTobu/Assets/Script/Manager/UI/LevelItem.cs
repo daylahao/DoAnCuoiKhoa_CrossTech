@@ -5,8 +5,8 @@ using TMPro;
 
 public class LevelItem : MonoBehaviour
 {
-    public GameObject _PrefabIscomple;
     public TextMeshProUGUI _tmplevel;
+    public DialogConainter Dialog_Parent;
     public int _levelID;
     public LevelConfig _Config;
     public System.Action<LevelConfig> OnClickChoseRoom;
@@ -16,10 +16,10 @@ public class LevelItem : MonoBehaviour
         _levelID = config._LevelID;
         _tmplevel.SetText($"{config._LevelID}");
         OnClickChoseRoom = cb;
-        _PrefabIscomple.SetActive(false);
     }
     public void OnClickChooseLevel()
     {
         OnClickChoseRoom?.Invoke(this._Config);
+        Dialog_Parent.ClickCloseDialog();
     }
 }

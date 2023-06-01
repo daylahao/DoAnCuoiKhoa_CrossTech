@@ -16,3 +16,4 @@ public class DialogConainter : BaseDialog
         GameManager.Instance.OnShowDialog<DialogConainter>("Dialog/DialogBtn_Home_Container");
     }
 }
+

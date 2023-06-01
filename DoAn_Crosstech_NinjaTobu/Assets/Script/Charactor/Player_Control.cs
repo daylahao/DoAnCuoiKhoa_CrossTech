@@ -8,12 +8,11 @@ public class Player_Control : BaseControl
     // Start is called before the first frame update
     void Start()
     {
-        IsPlayGame = true;
-        Lastposition = Vector2.zero;
-        Rb = GetComponent<Rigidbody2D>();
-        Arrow_ = transform.GetChild(0).gameObject;
-        Arrow_.transform.localScale = new Vector3(Arrow_.transform.localScale.x, 0f, Arrow_.transform.localScale.z);
-        _animator = this.GetComponent<Animator>();
+            Lastposition = Vector2.zero;
+            Rb = GetComponent<Rigidbody2D>();
+            Arrow_ = transform.GetChild(0).gameObject;
+            Arrow_.transform.localScale = new Vector3(Arrow_.transform.localScale.x, 0f, Arrow_.transform.localScale.z);
+            _animator = this.GetComponent<Animator>();
     }
     // Update is called once per frame
     void Update()

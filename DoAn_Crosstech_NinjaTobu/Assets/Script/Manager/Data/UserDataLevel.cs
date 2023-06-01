@@ -10,7 +10,7 @@ public class UserDataLevel
     public void NewUser()
     {
 
-        _CurrentLevelCompleted = 2;
+        _CurrentLevelCompleted = 1;
         _HighScore = 0;
     }
     public void OpenApp()

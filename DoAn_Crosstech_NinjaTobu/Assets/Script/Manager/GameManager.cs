@@ -7,9 +7,23 @@ public class GameManager : MonoSingleton<GameManager>
     public int NumberScene_PlayGame = 1;
     public int NumberScene_Home = 0;
     public LevelConfig _CurrentPlayinglevel;
+
+    public override void Awake()
+    {
+        if (m_Instance == null)
+        {
+            m_Instance = this;
+        }
+        else if (m_Instance != this)
+        {
+            Destroy(m_Instance.gameObject);
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
     public void Start()
     {
-        DontDestroyOnLoad(this);
+
     }
     public void OnJonGame(LevelConfig config)
     {

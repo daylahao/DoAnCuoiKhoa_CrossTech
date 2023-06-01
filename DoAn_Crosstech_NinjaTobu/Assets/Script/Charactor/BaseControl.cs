@@ -79,7 +79,7 @@ public class BaseControl : MonoBehaviour
         DistanceScale = Power;
         Fore = Power;
         if (Fore < MaxScale_Y)
-            Fore += Power* Time.deltaTime;
+            Fore += Power* Time.deltaTime + 2f ;
         else Fore = MaxScale_Y;
         Arrow_.transform.localScale = new Vector3(1f, Fore + 2f, 1f);
     }

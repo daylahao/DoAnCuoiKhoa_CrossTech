@@ -35,7 +35,7 @@ public class CameraMove : MonoBehaviour
     }
     public void FindObject()
     {
-        LimitTransform = GameObject.Find("PointLimit").transform;
+        LimitTransform = GameObject.Find("Land Limit").transform;
     }
     private void AutoMoveUp_Camera()
     {

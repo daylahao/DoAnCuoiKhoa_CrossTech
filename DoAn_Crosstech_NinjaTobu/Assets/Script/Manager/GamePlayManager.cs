@@ -12,6 +12,7 @@ public class GamePlayManager :MonoSingleton<GamePlayManager>
     {
         Score_player = 0;
         Player =Instantiate(Id_Skin, new Vector3(0, -1f, 0), Quaternion.identity);
+        Player.GetComponent<Player_Control>().IsPlayGame = true;
         Camera.main.GetComponent<CameraMove>().CharactorTransform = Player.transform;
         Camera.main.GetComponent<CameraMove>().IsPlayLevel = true;
     }
@@ -19,6 +20,8 @@ public class GamePlayManager :MonoSingleton<GamePlayManager>
     {
         //  EnermyManager.Instance.PauseGane();
         Camera.main.GetComponent<CameraMove>().IsPlayLevel = false;
+        GameManager.Instance.OnShowDialog<DialogConainter>("Dialog/DialogBackhome_Container");
+        Debug.Log("PlayerDie");
     }
 
 }

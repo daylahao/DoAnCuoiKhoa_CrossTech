@@ -1002,7 +1002,7 @@ Animator:
   m_GameObject: {fileID: 3595108640834789915}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d6b20b85f7c92d5458e59251fb5cad5b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1041,7 +1041,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Dialog: {fileID: 0}
   _Configs: {fileID: 0}
-  _Datas: {fileID: 0}
+  _Datas:
+    _CurrentLevelCompleted: 0
+    _HighScore: 0
 --- !u!1 &3595108641358487827
 GameObject:
   m_ObjectHideFlags: 0
