@@ -229,14 +229,14 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 1
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &5336085264229173633
 MonoBehaviour:
@@ -252,12 +252,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 0}
   Rb: {fileID: 0}
+  COL: {fileID: 1612080176044541570}
   Arrow_: {fileID: 0}
   DistanceScale: 0
   Doublejump: 2
-  MaxScale_Y: 4
-  Fore_Def: 65
-  Gravity_Def: 3
+  MaxScale_Y: 1.5
+  Fore_Def: 110
+  Gravity_Def: 1.2
   Lastposition: {x: 0, y: 0}
   Currentposition: {x: 0, y: 0}
   IsPlayGame: 0

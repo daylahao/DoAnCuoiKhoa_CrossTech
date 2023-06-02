@@ -9,6 +9,7 @@ public class BaseEnermy : MonoBehaviour
     public float time_flipX = 2f;
     public float time_;
     public Animator _animator;
+    public bool CompleteMap=false;
     public virtual void PlayerKill(GameObject Object)
     {
         if(Object.tag =="Player")

@@ -7,7 +7,7 @@ public class GameManager : MonoSingleton<GameManager>
     public int NumberScene_PlayGame = 1;
     public int NumberScene_Home = 0;
     public LevelConfig _CurrentPlayinglevel;
-    public UI_HOME UIHOME;
+    public SoundConfigs SoundFX;
 
     public override void Awake()
     {
@@ -36,11 +36,11 @@ public class GameManager : MonoSingleton<GameManager>
     }
     public void LoadSceneGame()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(NumberScene_PlayGame);
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(NumberScene_PlayGame);
     }
     public void OnHomeScene()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(NumberScene_Home);
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(NumberScene_Home);
     }
     public Transform _popUpContainer;
     public T OnShowDialog<T>(string path, object data = null, UnityEngine.Events.UnityAction callbackCompleteShow = null) where T:BaseDialog

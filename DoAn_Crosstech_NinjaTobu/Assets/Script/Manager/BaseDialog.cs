@@ -44,6 +44,7 @@ public class BaseDialog : MonoBehaviour
 
     public virtual void ClickCloseDialog()
     {
+        SoundManager.Instance.PlayFx("Button_Click");
         OnHide();
     }
     public virtual void OnHide()

@@ -9,6 +9,7 @@ public class BaseControl : MonoBehaviour
     public const string ANIMATOR_IDLE = "Charactor_Idle";
     public const string ANIMATOR_JUMP = "Charactor_Jump";
     public Rigidbody2D Rb; // Đưa vào khi người chơi start
+    public Collider2D COL;
     public GameObject Arrow_;  // Đưa vào khi người chơi start
     public float DistanceScale;
     public float Doublejump = 2;
@@ -23,6 +24,7 @@ public class BaseControl : MonoBehaviour
     private Vector3 DistanceMove =Vector3.zero;
     public virtual void PlayerJump_Control(Vector3 VectorRotation)
     {
+        COL.enabled = false;
         Rb.gravityScale = Gravity_Def;
         Rb.velocity = Vector3.zero;
         //Rb.velocity = new Vector2(VectorRotation.x, VectorRotation.y)* Fore;
@@ -38,6 +40,11 @@ public class BaseControl : MonoBehaviour
         Doublejump--;
         _animator.Play(ANIMATOR_JUMP);
     }
+    IEnumerator CoroutineEnableCollision()
+    {
+        yield return new WaitForSeconds(0.015f);
+        COL.enabled = true;
+    }
     public virtual void GetTouch()
     {
         if (Input.touchCount > 0)
@@ -52,11 +59,10 @@ public class BaseControl : MonoBehaviour
                 }
                 if (Finger.phase == TouchPhase.Moved)
                 {
-                    Time.timeScale = 0.2f;
-                    if(Rb.gravityScale>0.1f)
-                    Rb.gravityScale -= 5f * Time.deltaTime;
                     FingerCurrent = Camera.main.ScreenToWorldPoint(Finger.position);
                     DistanceMove = FingerCurrent - FingerBegan;
+                    if (Time.timeScale > 0.5f && Doublejump > 0 && Arrow_.transform.localScale.y>1f)
+                        Time.timeScale = 0.3f;
                     RotationArrow();
                     if(Doublejump>0)
                         ScaleArrow();
@@ -65,8 +71,12 @@ public class BaseControl : MonoBehaviour
                 if(Finger.phase == TouchPhase.Ended)
                 {
                     Time.timeScale = 1f;
-                    if (Fore>0.5f && Doublejump>0)
-                    PlayerJump_Control(DistanceMove);
+                    if (Fore > 0.5f && Doublejump > 0)
+                    {
+                        PlayerJump_Control(DistanceMove);
+                        GamePlayManager.Instance.PlayerJump_Sound();
+                        StartCoroutine(CoroutineEnableCollision());
+                    }
                     CancelArrow();
                 }
             }
@@ -81,7 +91,7 @@ public class BaseControl : MonoBehaviour
         if (Fore < MaxScale_Y)
             Fore += Power* Time.deltaTime + 2f ;
         else Fore = MaxScale_Y;
-        Arrow_.transform.localScale = new Vector3(1f, Fore + 2f, 1f);
+        Arrow_.transform.localScale = new Vector3(1f,Fore+5f, 1f);
     }
     private void RotationArrow()
     {
@@ -106,8 +116,10 @@ public class BaseControl : MonoBehaviour
     }
     public virtual void Player_Die()
     {
+        Time.timeScale = 1f;
         GamePlayManager.Instance.PlayerDeath();
         Destroy(this.gameObject);
+        SoundManager.Instance.PlayFx("Girl_Charactor");
     }
     public virtual void Distance_Player()
     {

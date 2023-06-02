@@ -12,6 +12,7 @@ public class GameDataManager : MonoSingleton<GameDataManager>
     {
         loaddata();
         GameUIManager.Instance.OnInit();
+        SoundManager.Instance.OnInit();
     }
 
     // Update is called once per frame
@@ -26,7 +27,6 @@ public class GameDataManager : MonoSingleton<GameDataManager>
                 string jsonData = PlayerPrefs.GetString(data.user_name);
                 if (!string.IsNullOrEmpty(jsonData)) {
                     data = JsonUtility.FromJson<Userdata>(jsonData);
-                    Debug.Log(data._LevelData._CurrentLevelCompleted);
                 }
                 else
                 {

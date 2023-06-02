@@ -28,3 +28,30 @@ MonoBehaviour:
   - _LevelID: 5
     _PrefabLevel: {fileID: 5718432638896725373, guid: 59ed33af1e64c3e4db7324f202211823, type: 3}
     _RewardWhenComplete: 0
+  - _LevelID: 6
+    _PrefabLevel: {fileID: 5718432638896725373, guid: 59ed33af1e64c3e4db7324f202211823, type: 3}
+    _RewardWhenComplete: 0
+  - _LevelID: 7
+    _PrefabLevel: {fileID: 5718432638896725373, guid: 59ed33af1e64c3e4db7324f202211823, type: 3}
+    _RewardWhenComplete: 0
+  - _LevelID: 8
+    _PrefabLevel: {fileID: 5718432638896725373, guid: 59ed33af1e64c3e4db7324f202211823, type: 3}
+    _RewardWhenComplete: 0
+  - _LevelID: 9
+    _PrefabLevel: {fileID: 5718432638896725373, guid: 59ed33af1e64c3e4db7324f202211823, type: 3}
+    _RewardWhenComplete: 0
+  - _LevelID: 10
+    _PrefabLevel: {fileID: 5718432638896725373, guid: 59ed33af1e64c3e4db7324f202211823, type: 3}
+    _RewardWhenComplete: 0
+  - _LevelID: 11
+    _PrefabLevel: {fileID: 5718432638896725373, guid: 59ed33af1e64c3e4db7324f202211823, type: 3}
+    _RewardWhenComplete: 0
+  - _LevelID: 12
+    _PrefabLevel: {fileID: 5718432638896725373, guid: 59ed33af1e64c3e4db7324f202211823, type: 3}
+    _RewardWhenComplete: 0
+  - _LevelID: 13
+    _PrefabLevel: {fileID: 5718432638896725373, guid: 59ed33af1e64c3e4db7324f202211823, type: 3}
+    _RewardWhenComplete: 0
+  - _LevelID: 14
+    _PrefabLevel: {fileID: 5718432638896725373, guid: 59ed33af1e64c3e4db7324f202211823, type: 3}
+    _RewardWhenComplete: 0

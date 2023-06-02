@@ -63,19 +63,26 @@
     <Compile Include="Assets\Script\Enermy\BaseEnermy.cs" />
     <Compile Include="Assets\Script\MapObject\DestroyObject.cs" />
     <Compile Include="Assets\Script\Manager\GameManager.cs" />
+    <Compile Include="Assets\Script\Dialog_Complete.cs" />
     <Compile Include="Assets\Script\Manager\UI\LevelItem.cs" />
     <Compile Include="Assets\Script\UI_HOME.cs" />
     <Compile Include="Assets\Script\Manager\Data\Userdata.cs" />
     <Compile Include="Assets\Script\Manager\UI\LevelHandler.cs" />
     <Compile Include="Assets\Script\Manager\Data\UserDataLevel.cs" />
+    <Compile Include="Assets\Script\Dialog_ContainerRetry.cs" />
+    <Compile Include="Assets\Script\ScriptConfig\SoundConfigs.cs" />
     <Compile Include="Assets\Script\Enermy\Creep_Enermy.cs" />
     <Compile Include="Assets\Script\Manager\UI\RetryDialog.cs" />
+    <Compile Include="Assets\Script\Manager\Sound\SoundBase.cs" />
     <Compile Include="Assets\Script\Manager\UIManager.cs" />
+    <Compile Include="Assets\Script\ScriptConfig\GameStatConfigs.cs" />
     <Compile Include="Assets\Script\Manager\UI\MapSpawner.cs" />
     <Compile Include="Assets\Script\Manager\UI\LevelsDialog.cs" />
     <Compile Include="Assets\Script\ScriptConfig\LevelConfigs.cs" />
     <Compile Include="Assets\Script\UI_Game.cs" />
+    <Compile Include="Assets\Script\Manager\Sound\SoundManager.cs" />
     <Compile Include="Assets\Script\Manager\GamePlayManager.cs" />
+    <Compile Include="Assets\Script\Manager\Sound\UserBoosterDatas.cs" />
     <Compile Include="Assets\Script\CameraMove.cs" />
     <Compile Include="Assets\Script\Manager\BaseDialog.cs" />
     <Compile Include="Assets\Script\SpamObject.cs" />
@@ -84,13 +91,6 @@
     <Compile Include="Assets\Script\Manager\GameDataManager.cs" />
     <Compile Include="Assets\Script\Manager\MonoSingleton.cs" />
     <Compile Include="Assets\Script\Manager\EnermyManager.cs" />
-    <Compile Include="Assets\Script\Manager\Sound\SoundBase.cs" />
-    <Compile Include="Assets\Script\Manager\Sound\SoundManager.cs" />
-    <Compile Include="Assets\Script\Manager\Sound\UserBoosterDatas.cs" />
-    <Compile Include="Assets\Script\ScriptConfig\SoundConfigs.cs" />
-    <Compile Include="Assets\Script\ScriptConfig\GameStatConfigs.cs" />
-    <Compile Include="Assets\Script\Dialog_Complete.cs" />
-    <Compile Include="Assets\Script\Dialog_ContainerRetry.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -30,9 +30,14 @@ public class Player_Control : BaseControl
         if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Land")
         {
             ClaimWall();
+            GamePlayManager.Instance.PlayerEnterWall_Sound();
         }
         if (collision.gameObject.tag == "Finish")
             Player_Die();
+        if (collision.gameObject.tag == "Complete")
+        {
+            CompleteLevel();
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -46,6 +51,8 @@ public class Player_Control : BaseControl
     }
     public void CompleteLevel()
     {
+        IsPlayGame = false;
+        this.Rb.velocity = Vector2.zero;
         GamePlayManager.Instance.PlayerCompleteLevel();
         
     }

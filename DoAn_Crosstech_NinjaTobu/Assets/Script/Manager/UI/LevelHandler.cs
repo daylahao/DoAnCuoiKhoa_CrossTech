@@ -12,7 +12,6 @@ public class LevelHandler : MonoBehaviour
         _Dialog = null;
         _Configs = LevelConfigs.Instance;
         _Datas = UserDataLevel.Instance;
-        Debug.Log("Levle hen tai" + _Datas._CurrentLevelCompleted.ToString());
     }
     public void ShowDialog()
     {
