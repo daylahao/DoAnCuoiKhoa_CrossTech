@@ -13,6 +13,18 @@ MonoBehaviour:
   m_Name: LevelConfigs
   m_EditorClassIdentifier: Assembly-CSharp::LevelConfigs
   _Level:
-  - _LevelID: 0
+  - _LevelID: 1
     _PrefabLevel: {fileID: 3915876808675209518, guid: 2b37661a600d1a146ac59c3a6e7a2154, type: 3}
+    _RewardWhenComplete: 0
+  - _LevelID: 2
+    _PrefabLevel: {fileID: 5477902083373546444, guid: d811940e6ad64c04782685bc56c799de, type: 3}
+    _RewardWhenComplete: 0
+  - _LevelID: 3
+    _PrefabLevel: {fileID: 4325747392766868110, guid: 9a687c2520864e542b59fc19c340144b, type: 3}
+    _RewardWhenComplete: 0
+  - _LevelID: 4
+    _PrefabLevel: {fileID: 399493485306877671, guid: 2d9ad1c201c6cb545b3aaadbea8866df, type: 3}
+    _RewardWhenComplete: 0
+  - _LevelID: 5
+    _PrefabLevel: {fileID: 5718432638896725373, guid: 59ed33af1e64c3e4db7324f202211823, type: 3}
     _RewardWhenComplete: 0

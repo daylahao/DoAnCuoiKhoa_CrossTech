@@ -25,6 +25,10 @@ public class LevelConfigs : ScriptableObject
     {
         return _Level;
     }
+    public LevelConfig GetConfigID(int Level_Id)
+    {
+        return _Level[Level_Id];
+    }
 } 
 [System.Serializable]
 public class LevelConfig

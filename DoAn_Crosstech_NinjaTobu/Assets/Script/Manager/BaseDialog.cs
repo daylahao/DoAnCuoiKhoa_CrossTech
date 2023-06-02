@@ -44,18 +44,21 @@ public class BaseDialog : MonoBehaviour
 
     public virtual void ClickCloseDialog()
     {
-
         OnHide();
     }
     public virtual void OnHide()
-    {
-        
+    {  
         _animator.Play(ANIMATOR_HIDE);
         OnCompleteHide();
     }
     protected virtual void OnCompleteHide()
     {
         this.gameObject.SetActive(false);
-       
+    }
+    public virtual void ClickBackHome()
+    {
+        ClickCloseDialog();
+        GameManager.Instance.OnHomeScene();
+        GameManager.Instance.OnShowDialog<MenuHomeDialog>("Dialog/DialogBtn_Home_Container");
     }
 }

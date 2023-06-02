@@ -17,4 +17,8 @@ public class UserDataLevel
     {
 
     }
+    public void UpdateCompleteLevel()
+    {
+        _CurrentLevelCompleted++;
+    }
 }

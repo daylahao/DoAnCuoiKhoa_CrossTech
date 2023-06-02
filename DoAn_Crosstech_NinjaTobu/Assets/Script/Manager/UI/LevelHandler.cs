@@ -12,6 +12,7 @@ public class LevelHandler : MonoBehaviour
         _Dialog = null;
         _Configs = LevelConfigs.Instance;
         _Datas = UserDataLevel.Instance;
+        Debug.Log("Levle hen tai" + _Datas._CurrentLevelCompleted.ToString());
     }
     public void ShowDialog()
     {
@@ -21,5 +22,9 @@ public class LevelHandler : MonoBehaviour
     public void OnChooseRoom(LevelConfig Config)
     {
         GameManager.Instance.OnJonGame(Config);
+    }
+    public LevelConfig GetLevel(int Level_Id)
+    {
+        return _Configs.GetConfigID(Level_Id-1);   
     }
 }

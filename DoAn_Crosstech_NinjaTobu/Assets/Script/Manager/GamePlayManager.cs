@@ -20,8 +20,18 @@ public class GamePlayManager :MonoSingleton<GamePlayManager>
     {
         //  EnermyManager.Instance.PauseGane();
         Camera.main.GetComponent<CameraMove>().IsPlayLevel = false;
-        GameManager.Instance.OnShowDialog<DialogConainter>("Dialog/DialogBackhome_Container");
-        Debug.Log("PlayerDie");
+        GameManager.Instance.OnShowDialog<MenuHomeDialog>("Dialog/DialogBackhome_Container");
+    }
+    public void PlayerCompleteLevel()
+    {
+        if(GameManager.Instance._CurrentPlayinglevel._LevelID<5)
+            GameDataManager.Instance.CompleteLevel();
+        SaveDataPlayer();
+        GameManager.Instance.OnShowDialog<MenuHomeDialog>("Dialog/CompleteLevel_Dialog");
+    }
+    public void SaveDataPlayer()
+    {
+        GameDataManager.Instance.savedata();
     }
 
 }

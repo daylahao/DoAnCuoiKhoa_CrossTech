@@ -6,7 +6,7 @@ using UnityEngine;
 public class Userdata
 {
     public List<int> high_score;
-    public string user_name;
+    public string user_name = "HaoHao";
     public int id_Skin;
     public UserDataLevel _LevelData;
     public static Userdata Instance => GameDataManager.Instance.data;

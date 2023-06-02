@@ -7,6 +7,7 @@ public class GameManager : MonoSingleton<GameManager>
     public int NumberScene_PlayGame = 1;
     public int NumberScene_Home = 0;
     public LevelConfig _CurrentPlayinglevel;
+    public UI_HOME UIHOME;
 
     public override void Awake()
     {
@@ -18,16 +19,23 @@ public class GameManager : MonoSingleton<GameManager>
         {
             Destroy(m_Instance.gameObject);
         }
-
         DontDestroyOnLoad(gameObject);
     }
     public void Start()
     {
-
     }
     public void OnJonGame(LevelConfig config)
     {
         this._CurrentPlayinglevel = config;
+        LoadSceneGame();
+    }
+    public void NextLevel()
+    {
+        OnJonGame(GameUIManager.Instance.NextLevel(_CurrentPlayinglevel._LevelID));
+        LoadSceneGame();
+    }
+    public void LoadSceneGame()
+    {
         UnityEngine.SceneManagement.SceneManager.LoadScene(NumberScene_PlayGame);
     }
     public void OnHomeScene()

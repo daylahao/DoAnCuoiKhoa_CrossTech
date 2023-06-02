@@ -27,9 +27,15 @@ public class GameUIManager : MonoSingleton<GameUIManager>
     public void OnInit()
     {
         _LevelHandler?.InitHandler();
+        //LoadMenu();
     }
     public void LoadMenu()
     {
-        GameManager.Instance.OnShowDialog<DialogConainter>("Dialog/DialogBtn_Home_Container");
+        GameManager.Instance.OnShowDialog<MenuHomeDialog>("Dialog/DialogBtn_Home_Container");
+    }
+    public LevelConfig NextLevel(int LevelCurrent_Id)
+    {
+        LevelCurrent_Id++;
+        return _LevelHandler.GetLevel(LevelCurrent_Id);
     }
 }

@@ -26,6 +26,7 @@ public class GameDataManager : MonoSingleton<GameDataManager>
                 string jsonData = PlayerPrefs.GetString(data.user_name);
                 if (!string.IsNullOrEmpty(jsonData)) {
                     data = JsonUtility.FromJson<Userdata>(jsonData);
+                    Debug.Log(data._LevelData._CurrentLevelCompleted);
                 }
                 else
                 {
@@ -36,6 +37,7 @@ public class GameDataManager : MonoSingleton<GameDataManager>
             else
             {
                 CreateUser();
+                Debug.Log("Tao Data moi");
             }
         }
         catch(System.Exception e)
@@ -54,10 +56,15 @@ public class GameDataManager : MonoSingleton<GameDataManager>
     }
     public void CreateUser()
     {
-        Userdata.Instance.NewUser();
+        data.NewUser();
     }
     public void StartGame()
     {
 
+    }
+    public void CompleteLevel()
+    {
+        if(GameManager.Instance._CurrentPlayinglevel._LevelID == data._LevelData._CurrentLevelCompleted)
+            data._LevelData._CurrentLevelCompleted++;
     }
 }

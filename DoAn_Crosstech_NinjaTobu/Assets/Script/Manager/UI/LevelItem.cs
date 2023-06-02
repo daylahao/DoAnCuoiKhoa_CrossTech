@@ -6,7 +6,7 @@ using TMPro;
 public class LevelItem : MonoBehaviour
 {
     public TextMeshProUGUI _tmplevel;
-    public DialogConainter Dialog_Parent;
+    public MenuHomeDialog Dialog_Parent;
     public int _levelID;
     public LevelConfig _Config;
     public System.Action<LevelConfig> OnClickChoseRoom;

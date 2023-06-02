@@ -15,14 +15,14 @@ public class LevelsDialog : BaseDialog
     {
         _PrefabItem = IsComplete ? _PrefabItemComplete : _PrefabItemLock;
         LevelItem newItem = Instantiate<LevelItem>(this._PrefabItem,this._TransformItem);
-        newItem.Dialog_Parent = this.GetComponent<DialogConainter>();
+        newItem.Dialog_Parent = this.GetComponent<MenuHomeDialog>();
         newItem.ParseData(config,IsComplete,OnChooseLevel);
         _Items ??= new List<LevelItem>();
         _Items.Add(newItem);
     }
     public void ParseData(List<LevelConfig> levelConfigs,int CompleteLevel,LevelHandler _Handler)
     {
-        Debug.Log(CompleteLevel.ToString());
+        //Debug.Log(CompleteLevel.ToString());
         _handler = _Handler;
         for (int i = 0; i < levelConfigs.Count; i++)
         { 

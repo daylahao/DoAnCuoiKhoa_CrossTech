@@ -8,7 +8,7 @@ public class CameraMove : MonoBehaviour
     public Transform LimitTransform;
     public float SpeedCamUp;
     public bool IsPlayLevel = false;
-    public float Offset;
+    private float Offset=2f;
     // Start is called before the first frame update
     private void Awake()
     {

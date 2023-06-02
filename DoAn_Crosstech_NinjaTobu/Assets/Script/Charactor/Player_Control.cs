@@ -39,6 +39,14 @@ public class Player_Control : BaseControl
         if (collision.gameObject.tag == "Finish")
             Player_Die();
         if (collision.gameObject.tag == "Complete")
-            Debug.Log("Hoan Thanh");
+        {
+            CompleteLevel();
+        }
+
+    }
+    public void CompleteLevel()
+    {
+        GamePlayManager.Instance.PlayerCompleteLevel();
+        
     }
 }
