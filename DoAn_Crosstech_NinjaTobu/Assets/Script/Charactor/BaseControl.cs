@@ -8,9 +8,14 @@ public class BaseControl : MonoBehaviour
     public Animator _animator;
     public const string ANIMATOR_IDLE = "Charactor_Idle";
     public const string ANIMATOR_JUMP = "Charactor_Jump";
+    public const string ANIMATOR_Clamb = "Charactor_IdleWall";
+    public const string ANIMATOR_ClambUp = "Chacractor_ClambUp";
+    public const string ANIMATOR_ATTACK = "Charactor_Attack";
     public Rigidbody2D Rb; // Đưa vào khi người chơi start
-    public Collider2D COL;
+    public Collider2D COL, COL_X, COL_Y;
     public GameObject Arrow_;  // Đưa vào khi người chơi start
+    public bool IsClamb = false;
+    public bool IsClambUp = false;
     public float DistanceScale;
     public float Doublejump = 2;
     public float MaxScale_Y = 20f;
@@ -24,7 +29,7 @@ public class BaseControl : MonoBehaviour
     private Vector3 DistanceMove =Vector3.zero;
     public virtual void PlayerJump_Control(Vector3 VectorRotation)
     {
-        COL.enabled = false;
+        StateAllCollisionBodyPlayer(false);
         Rb.gravityScale = Gravity_Def;
         Rb.velocity = Vector3.zero;
         //Rb.velocity = new Vector2(VectorRotation.x, VectorRotation.y)* Fore;
@@ -42,8 +47,10 @@ public class BaseControl : MonoBehaviour
     }
     IEnumerator CoroutineEnableCollision()
     {
-        yield return new WaitForSeconds(0.015f);
-        COL.enabled = true;
+        yield return new WaitForSeconds(0.045f);
+        StateAllCollisionBodyPlayer(true);
+        IsClamb = false;
+        IsClambUp = false;
     }
     public virtual void GetTouch()
     {
@@ -108,11 +115,20 @@ public class BaseControl : MonoBehaviour
         Rb.gravityScale = 0;
         Rb.velocity = Vector2.zero;
         Doublejump = 2;
+        if (IsClamb)
+        {
+            _animator.Play(ANIMATOR_Clamb);
+        }
+        else if (IsClambUp)
+        {
+            _animator.Play(ANIMATOR_ClambUp);
+        }
+        else
         _animator.Play(ANIMATOR_IDLE);
     }
     public virtual void Fight_Enermy()
     {
-
+        _animator.Play(ANIMATOR_ATTACK);
     }
     public virtual void Player_Die()
     {
@@ -136,5 +152,11 @@ public class BaseControl : MonoBehaviour
     {
         this.transform.localScale = new Vector3(-this.transform.localScale.x, this.transform.localScale.y, this.transform.localScale.z);
 
+    }
+    public void StateAllCollisionBodyPlayer(bool Enable)
+    {
+        COL.enabled = Enable;
+        COL_X.enabled = Enable;
+        COL_Y.enabled = Enable;
     }
 }

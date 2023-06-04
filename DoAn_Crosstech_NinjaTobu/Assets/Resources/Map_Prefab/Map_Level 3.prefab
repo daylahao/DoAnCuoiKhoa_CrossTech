@@ -878,6 +878,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1436063528231695206, guid: 10121dd6bf9e16542a6331885991f8b3, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4224928804358957072, guid: 10121dd6bf9e16542a6331885991f8b3, type: 3}
       propertyPath: m_Name
       value: BlockThorn_Container (1)
@@ -1136,6 +1140,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1436063528231695206, guid: 10121dd6bf9e16542a6331885991f8b3, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4224928804358957072, guid: 10121dd6bf9e16542a6331885991f8b3, type: 3}
       propertyPath: m_Name
       value: BlockThorn_Container (3)
@@ -1207,6 +1215,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2146234616, guid: 10121dd6bf9e16542a6331885991f8b3, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436063528231695206, guid: 10121dd6bf9e16542a6331885991f8b3, type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
@@ -1343,6 +1355,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2146234616, guid: 10121dd6bf9e16542a6331885991f8b3, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436063528231695206, guid: 10121dd6bf9e16542a6331885991f8b3, type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}

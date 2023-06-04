@@ -10,10 +10,13 @@ public class BaseEnermy : MonoBehaviour
     public float time_;
     public Animator _animator;
     public bool CompleteMap=false;
+    public const string ANIMATOR_DIE = "Creep_Die";
     public virtual void PlayerKill(GameObject Object)
     {
-        if(Object.tag =="Player")
-            Destroy(this.gameObject);
+        if (Object.tag == "Player")
+        {
+            DestroyEnermy();
+        }
     }
     private void OnBecameInvisible()
     {
@@ -27,5 +30,9 @@ public class BaseEnermy : MonoBehaviour
             this.transform.localScale = new Vector3(-this.transform.localScale.x, this.transform.localScale.y, this.transform.localScale.z);
             time_ = 0;
         }
+    }
+    public void DestroyEnermy()
+    {
+        Destroy(this.gameObject);
     }
 }

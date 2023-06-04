@@ -34,6 +34,8 @@ public class Player_Control : BaseControl
         }
         if (collision.gameObject.tag == "Finish")
             Player_Die();
+        if (collision.gameObject.tag == "Enermy")
+            Fight_Enermy();
         if (collision.gameObject.tag == "Complete")
         {
             CompleteLevel();

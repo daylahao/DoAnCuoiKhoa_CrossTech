@@ -12,9 +12,8 @@ public class GameDataManager : MonoSingleton<GameDataManager>
     {
         loaddata();
         GameUIManager.Instance.OnInit();
-        SoundManager.Instance.OnInit();
+        SoundManager.Instance.OnInit(data.isOnFx,data.isOnMusic);
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -48,11 +47,17 @@ public class GameDataManager : MonoSingleton<GameDataManager>
     }
     public void savedata()
     {
+        SaveStateSound();
         data.high_score.Add(GamePlayManager.Instance.Score_player);
         string jsonData = JsonUtility.ToJson(data);
         Debug.Log(jsonData);
         PlayerPrefs.SetString(data.user_name, jsonData);
         PlayerPrefs.Save();
+    }
+    public void SaveStateSound()
+    {
+        data.isOnFx = SoundManager.Instance.isOnFx;
+        data.isOnMusic = SoundManager.Instance.isOnMusic;
     }
     public void CreateUser()
     {

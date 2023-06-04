@@ -36,10 +36,12 @@ public class GameManager : MonoSingleton<GameManager>
     }
     public void LoadSceneGame()
     {
+        GameDataManager.Instance.savedata();
         UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(NumberScene_PlayGame);
     }
     public void OnHomeScene()
     {
+        GameDataManager.Instance.savedata();
         UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(NumberScene_Home);
     }
     public Transform _popUpContainer;

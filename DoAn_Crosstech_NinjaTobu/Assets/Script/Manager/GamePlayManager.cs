@@ -9,6 +9,7 @@ public class GamePlayManager : MonoSingleton<GamePlayManager>
     public int Score_player;
     public GameObject Player;
     public SoundConfigs SoundFX;
+    public bool IsShowDialogComplete=false;
     public void StartGame(Userdata GameData)
     {
         Score_player = 0;
@@ -25,15 +26,19 @@ public class GamePlayManager : MonoSingleton<GamePlayManager>
     }
     public void PlayerCompleteLevel()
     {
-        if (GameManager.Instance._CurrentPlayinglevel._LevelID < 5)
+        if (IsShowDialogComplete == false)
         {
-            GameDataManager.Instance.CompleteLevel();
-            GameManager.Instance.OnShowDialog<MenuHomeDialog>("Dialog/CompleteLevel_Dialog");
+            if (GameManager.Instance._CurrentPlayinglevel._LevelID < 5)
+            {
+                GameDataManager.Instance.CompleteLevel();
+                GameManager.Instance.OnShowDialog<MenuHomeDialog>("Dialog/CompleteLevel_Dialog");
+            }
+            else
+                GameManager.Instance.OnShowDialog<MenuHomeDialog>("Dialog/CompleteGame_Dialog");
+            IsShowDialogComplete = true;
             SoundManager.Instance.PlayFx("Complete_Sound");
+            SaveDataPlayer();
         }
-        else
-            GameManager.Instance.OnShowDialog<MenuHomeDialog>("Dialog/CompleteGame_Dialog");
-        SaveDataPlayer();
     }
     public void SaveDataPlayer()
     {

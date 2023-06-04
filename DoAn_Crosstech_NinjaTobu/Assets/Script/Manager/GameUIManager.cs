@@ -33,6 +33,10 @@ public class GameUIManager : MonoSingleton<GameUIManager>
     {
         GameManager.Instance.OnShowDialog<MenuHomeDialog>("Dialog/DialogBtn_Home_Container");
     }
+    public void load_ToggleSound()
+    {
+        GameManager.Instance.OnShowDialog<MenuHomeDialog>("Dialog/ContianerSound_Dialog");
+    }
     public LevelConfig NextLevel(int LevelCurrent_Id)
     {
         LevelCurrent_Id++;

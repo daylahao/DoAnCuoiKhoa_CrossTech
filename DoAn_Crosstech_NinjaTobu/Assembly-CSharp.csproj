@@ -82,6 +82,7 @@
     <Compile Include="Assets\Script\UI_Game.cs" />
     <Compile Include="Assets\Script\Manager\Sound\SoundManager.cs" />
     <Compile Include="Assets\Script\Manager\GamePlayManager.cs" />
+    <Compile Include="Assets\Toggle_Sound.cs" />
     <Compile Include="Assets\Script\Manager\Sound\UserBoosterDatas.cs" />
     <Compile Include="Assets\Script\CameraMove.cs" />
     <Compile Include="Assets\Script\Manager\BaseDialog.cs" />
@@ -91,6 +92,12 @@
     <Compile Include="Assets\Script\Manager\GameDataManager.cs" />
     <Compile Include="Assets\Script\Manager\MonoSingleton.cs" />
     <Compile Include="Assets\Script\Manager\EnermyManager.cs" />
+    <Compile Include="Assets\PlayerCheckWall.cs" />
+    <Compile Include="Assets\Script\Missons\BaseMission.cs" />
+    <Compile Include="Assets\Script\Missons\MissionItems.cs" />
+    <Compile Include="Assets\Script\TypeAttribute.cs" />
+    <Compile Include="Assets\Script\Missons\MissionHandler.cs" />
+    <Compile Include="Assets\Script\Missons\MissionDialog.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -38,13 +38,11 @@ public class BaseDialog : MonoBehaviour
             this.callbackShow = null;
             bk.Invoke();
         }
-
-        Debug.Log("Complete Show");
     }
 
     public virtual void ClickCloseDialog()
     {
-        SoundManager.Instance.PlayFx("Button_Click");
+        Sound_ClickButton();
         OnHide();
     }
     public virtual void OnHide()
@@ -61,5 +59,9 @@ public class BaseDialog : MonoBehaviour
         ClickCloseDialog();
         GameManager.Instance.OnHomeScene();
         GameManager.Instance.OnShowDialog<MenuHomeDialog>("Dialog/DialogBtn_Home_Container");
+    }
+    public void Sound_ClickButton()
+    {
+        SoundManager.Instance.PlayFx("Button_Click");
     }
 }

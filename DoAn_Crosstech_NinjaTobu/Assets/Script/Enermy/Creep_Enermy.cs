@@ -9,6 +9,7 @@ public class Creep_Enermy : BaseEnermy
     public float Fore_Attack = 100f;
     public const string ANIMATOR_IDLE = "CreepAnimation_Idle";
     public const string ANIMATOR_Attack = "CreepAnimation_Attack";
+
     // Start is called before the first frame update
     void Start()
     {
